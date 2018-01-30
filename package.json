@@ -1,35 +1,33 @@
 {
-  "_from": "watson-html5-speech-recognition",
-  "_id": "watson-html5-speech-recognition@0.6.6",
+  "_from": "git+https://github.com/abhishekkshinde/stt.git",
+  "_id": "stt@0.1",
   "_inBundle": false,
-  "_integrity": "sha1-RgssGFwl3oWCy4u50yEJViyZIDE=",
-  "_location": "/watson-html5-speech-recognition",
+  "_integrity": "sha1-6Vsifjj6mdCMd1HPVtfBWj2T6Gg=",
+  "_location": "/stt",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "watson-html5-speech-recognition",
-    "name": "watson-html5-speech-recognition",
-    "escapedName": "watson-html5-speech-recognition",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
+    "type": "git",
+    "raw": "https://github.com/abhishekkshinde/stt.git",
+    "rawSpec": "https://github.com/abhishekkshinde/stt.git",
+    "saveSpec": "git+https://github.com/abhishekkshinde/stt.git",
+    "fetchSpec": "https://github.com/abhishekkshinde/stt.git",
+    "gitCommittish": "master"
   },
   "_requiredBy": [
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/watson-html5-speech-recognition/-/watson-html5-speech-recognition-0.6.6.tgz",
+  "_resolved": "git+https://github.com/abhishekkshinde/stt.git#35cc9c61074a82e1483b1b854c3c909aafdbb07e",
   "_shasum": "460b2c185c25de8582cb8bb9d32109562c992031",
-  "_spec": "watson-html5-speech-recognition",
-  "_where": "H:\\stash\\develope\\personal-shopper",
+  "_spec": "https://github.com/abhishekkshinde/stt.git",
+  "_where": "H:\\wspeech\\watsonSpeechToText",
   "author": {
-    "name": "Carmine DiMascio",
-    "email": "cdimascio@gmail.com",
-    "url": "https://github.com/cdimascio"
+    "name": "Abhishek Shinde",
+    "email": "shinde.169@gmail.com",
+    "url": "https://github.com/abhishekkshinde"
   },
   "bugs": {
-    "url": "https://github.com/cdimascio/watson-html5-speech-recognition/issues"
+    "url": "git+https://github.com/abhishekkshinde/stt/issues"
   },
   "bundleDependencies": false,
   "dependencies": {
@@ -37,16 +35,15 @@
     "watson-speech": "^0.17.1"
   },
   "deprecated": false,
-  "description": "Watson HTML5 Speech to Text",
+  "description": "Speech to Text",
   "devDependencies": {
     "babel-cli": "^6.9.0",
     "babel-preset-es2015": "^6.6.0",
     "babel-preset-stage-0": "^6.5.0",
     "babel-register": "^6.7.2"
   },
-  "homepage": "https://github.com/cdimascio/watson-html5-speech-recognition#readme",
+  "homepage": "git+https://github.com/abhishekkshinde/stt#readme",
   "keywords": [
-    "watson",
     "speech-to-text",
     "speech",
     "text",
@@ -55,10 +52,10 @@
   ],
   "license": "Apache-2.0",
   "main": "dist/index.js",
-  "name": "watson-html5-speech-recognition",
+  "name": "stt",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cdimascio/watson-html5-speech-recognition.git"
+    "url": "git+https://github.com/abhishekkshinde/stt.git"
   },
   "scripts": {
     "compile": "rm -rf ./dist && ./node_modules/.bin/babel ./lib -d ./dist",
