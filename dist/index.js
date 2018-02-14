@@ -13,14 +13,15 @@ var _watsonSpeechToText = require('./adaptors/watson.speech.to.text.adaptor');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var noOp = function noOp() {};
+var noOp = function noOp() { };
 
 var SpeechToText = exports.SpeechToText = function () {
   function SpeechToText(conf) {
     _classCallCheck(this, SpeechToText);
 
     this.webkitSpeechAdaptor = new _webkitSpeechToText.WebKitSpeechToTextAdaptor();
-    this.watsonSpeechAdaptor = new _watsonSpeechToText.WatsonSpeechToTextAdaptor(conf);
+    if (conf.watsonTokenUrl)
+      this.watsonSpeechAdaptor = new _watsonSpeechToText.WatsonSpeechToTextAdaptor(conf);
   }
 
   _createClass(SpeechToText, [{
