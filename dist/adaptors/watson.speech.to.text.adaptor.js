@@ -64,42 +64,37 @@ var WatsonSpeechToTextAdaptor = exports.WatsonSpeechToTextAdaptor = function () 
       var onEnd = _ref2.onEnd;
 
       return new Promise(function (resolve) {
-        _this2._requestToken().then(function (token) {
-          var stream = watsonSpeechRecognizer({
-            token: token,
-            continuous: false, // false = automatically stop transcription the first time a pause is detected
-            objectMode: true // send objects instead of text
-          });
 
-          onStart({});
-
-          stream.on('error', function (err) {
-            return onError(err);
-          });
-
-          stream.on('data', function (data) {
-            var text = data.alternatives[0].transcript;
-            var isFinal = data.final;
-            onResult({ text: text, isFinal: isFinal });
-          });
-
-          resolve({
-            stop: function stop() {
-              stream.stop();
-            }
-          });
-        }).catch(function (error) {
-          onError({ error: error });
-          resolve({
-            stop: function stop() { }
-          });
+        var stream = watsonSpeechRecognizer({
+          token: _this2.tokenUrl,
+          continuous: false, // false = automatically stop transcription the first time a pause is detected
+          objectMode: true // send objects instead of text
         });
+
+        onStart({});
+
+        stream.on('error', function (err) {
+          return onError(err);
+        });
+
+        stream.on('data', function (data) {
+          var text = data.alternatives[0].transcript;
+          var isFinal = data.final;
+          onResult({ text: text, isFinal: isFinal });
+        });
+
+        resolve({
+          stop: function stop() {
+            stream.stop();
+          }
+        });
+
       });
     }
   }, {
     key: '_requestToken',
     value: function _requestToken() {
-		var _this4 = this;
+      var _this4 = this;
       return (0, _isomorphicFetch2.default)(this.tokenUrl).then(function (response) {
         console.log('got response');
         return _this4.tokenUrl;

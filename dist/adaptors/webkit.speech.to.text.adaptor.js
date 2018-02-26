@@ -22,9 +22,9 @@ var WebKitSpeechToTextAdaptor = exports.WebKitSpeechToTextAdaptor = function () 
       var onEnd = _ref.onEnd;
 
       var recognition = new webkitSpeechRecognition();
-      recognition.continuous = true;
+      recognition.continuous = false;
       recognition.interimResults = true;
-
+      recognition.maxAlternatives = 1;
       recognition.onstart = function (event) {
         onStart(event);
       };
