@@ -32,10 +32,10 @@ var WebKitSpeechToTextAdaptor = exports.WebKitSpeechToTextAdaptor = function () 
         // TODO should we end close the recogizer if isFinal is true?
         var text = '';
         var isFinal = false;
-        for (var i = event.resultIndex; i < event.results.length; ++i) {
-          text += event.results[i][0].transcript;
-          isFinal = event.results[i].isFinal;
-        }
+
+        text = event.results.item(event.results.length - 1).item(0).transcript;
+        isFinal = event.results.item(event.results.length - 1).isFinal;
+
         onResult({
           text: text,
           isFinal: isFinal
